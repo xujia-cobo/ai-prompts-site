@@ -17,7 +17,7 @@ PRs are always welcome! To get started, follow this section to build Developer H
 1. Clone the repository.
 
   ```shell
-  git clone git@code.1cobo.com:ai-prompts-site
+  git clone git@github.com:xujia-cobo/ai-prompts-site.git
   ```
 
 2. Install Mintlify.

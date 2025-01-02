@@ -1,9 +1,52 @@
 ---
-title: 'demo2'
-description: 'Market & Content demo page'
+title: '每周文档变更日志自动化 (Weekly changelog automation)'
 ---
 
-## 1. Prompt Template playground demo
+## 用途 / Purpose
 
-<LoadComponent componentName="prompt-playground" promptTemplate="Create a hello world {{language}} program, and explain the code." />
+自动生成 [Product Manuals](https://manuals.cobo.com/en/portal/introduction) 的每周[文档变更日志](https://manuals.cobo.com/en/portal/changelog)。
 
+Automatically generate weekly changelogs for [Product Manuals](https://manuals.cobo.com/en/portal/introduction), which are published at [Changelog](https://manuals.cobo.com/en/portal/changelog).
+
+## 实现方案 / Implementation
+
+具体实现流程：
+1. 使用 Windsurf + Claude 自动分析上周 [Product Manuals 代码库](https://github.com/CoboGlobal/product-manual/commits/master/) 的所有 Git Commit
+2. 生成英文总结并附上相关文档链接
+3. 由内容组审核内容
+4. 使用专门的 Prompt 生成中文版本更新日志
+
+The process combines Windsurf and Claude to:
+1. Automatically analyze all git commits from the [Product Manuals repository](https://github.com/CoboGlobal/product-manual/commits/master/) for the past week
+2. Generate an English summary with relevant documentation links
+3. Have Content Team reviews the content
+4. Generate Chinese translations using specialized prompts
+
+
+## Prompt 模板 / Prompt templates
+
+<Steps>
+  <Step title="初始提交总结 / Initial commit summary">
+    ```All the .mdx files under @. are content of Cobo's Product Manuals (https://manuals.cobo.com).Write a content changelog of the Product Manuals for everything changed under @. (run a git command to acquire everything that has changed, not just the commit name, but the actual changed lines and content in the git commit, in this commit: a28745088e08415332b2c7eb0105dea2a41a7b3a) and update the @changelog.mdx ```
+  </Step>
+  <Step title="处理多个提交 / Process multiple commits">
+    ```That's pretty good. Now, list all the git commits between 2024/09/11 to 2024/09/17 and repeat the same process from the previous prompt for each of them one at a time.```
+  </Step>
+  <Step title="添加遗漏的提交 / Add missing commits">
+    ```Include a changelog for git commit 516337a```
+  </Step>
+  <Step title="添加文档链接 / Add documentation links">
+    ```Add links to the documentation that was changed```
+  </Step>
+  <Step title="中文翻译 / Chinese translation">
+    ```great. Now, translate what you just wrote into Simplified Chinese, and insert them properly to @release-notes.mdx . Make sure you follow the bilingual glossary (EN <-> CN) found in @.cursorrules_bilingual_glossary ```
+  </Step>
+</Steps>
+
+## 注意事项 / Notes
+
+1. 
+
+## 参考资料 / Reference
+
+- [Changelog 自动化研究文档](https://docs.google.com/document/d/1HfNBfVMhm-I5gOTKz76OJx9WX_xGL3mU4-LUqLVWr7g/edit?tab=t.0)
