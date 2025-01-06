@@ -5,15 +5,15 @@ description: '让 Windsurf 结合 Input、Style Guide、Terminology 以及 Promp
 
 import { LoadComponent } from '/snippets/load-component.mdx';
 
-<LoadComponent componentName="prompt-playground" promptTemplate="You are an AI assistant tasked with writing [an article / a list of articles] based on the input I'll give you later. You must do the following while writing the article:
+<LoadComponent componentName="prompt-playground" promptTemplate="You are an AI assistant tasked with writing one or a list of articles based on the input I'll give you later. You must do the following while writing the article:
 
 1. Follow the documentation rules in:
-   - Terminology Rules: @terminology_rules.md
-   - Word Choice Rules: @word_choice_rules.md
-   - General Rules: @general_rules.md
+   - <terminology_rules>{{Terminology}}</terminology_rules>
+   - <word_choice_rules>{{Word choices}}</word_choice_rules>
+   - <general_rules>{{General rules}}</general_rules>
 
 2. Use the structure from existing articles in the same category as reference, such as:
-   - [Articles_for_reference]
+   - <articles_for_reference>{{Articles for reference}}</articles_for_reference>
 
 3. Ensure user-centric content by:
    - Addressing user pain points and common questions
