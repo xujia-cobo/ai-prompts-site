@@ -35,6 +35,12 @@
   "anchors": [],
   "navigation": [
     {
+      "group": "提示词模版",
+      "pages": [
+        "content_team/common/sample_prompt"
+      ]
+    },
+    {
       "group": "Windsurf",
       "pages": [
         "content_team/common/seo",
