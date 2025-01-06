@@ -5,8 +5,10 @@ description: '根据你提供的文档，逐条对照内容组制定的风格指
 
 import { LoadComponent } from '/snippets/load-component.mdx';
 
-<LoadComponent componentName="prompt-playground" promptTemplate="You are an AI assistant tasked with reviewing a document strictly based on the following rules. Your goal is to identify all inconsistencies or violations of the style guide, ensuring no rules are omitted during the review process.
-
+<LoadComponent componentName="prompt-playground" promptTemplate="<purpose>
+You are an AI assistant tasked with reviewing a document strictly based on the following rules. Your goal is to identify all inconsistencies or violations of the style guide, ensuring no rules are omitted during the review process.
+</purpose>
+<instructions>
 Review the provided document by thoroughly checking for compliance with the specified style guide rules. Identify all errors, inconsistencies, and deviations from the guidelines. Provide clear corrections and suggestions in the specified output format. If no issues are found, state this explicitly for each rule.
 
 1. Review the provided document <file_name>{{document to review}}</file_name> for adherence to <file_name>{{terminology rules}}</file_name>. Verify correct usage of terms, capitalization, and format. Flag any inconsistencies. 
@@ -26,4 +28,5 @@ If no issues are found, explicitly state:
 No issues detected for {rule_name}.  
 
 Before submitting your review, ensure that every rule has been fully addressed. Do not skip or overlook any part of the document.
+</instructions>
 "/>
