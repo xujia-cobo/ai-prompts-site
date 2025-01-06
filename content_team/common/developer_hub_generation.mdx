@@ -1,0 +1,52 @@
+---
+title: '生成初版 Developer Hub 文档'
+description: '让 Windsurf 结合 Input、Style Guide、Terminology 以及 Prompt 来自动生成一篇或一组新文档。'
+---
+
+import { LoadComponent } from '/snippets/load-component.mdx';
+
+<LoadComponent componentName="prompt-playground" promptTemplate="You are an AI assistant tasked with writing [an article / a list of articles] based on the input I'll give you later. You must do the following while writing the article:
+
+1. Follow the documentation rules in:
+   - Terminology Rules: @terminology_rules.md
+   - Word Choice Rules: @word_choice_rules.md
+   - General Rules: @general_rules.md
+
+2. Use the structure from existing articles in the same category as reference, such as:
+   - [Articles_for_reference]
+
+3. Ensure user-centric content by:
+   - Addressing user pain points and common questions
+   - Providing clear, actionable instructions
+   - Including practical examples and use cases
+   - Using clear, jargon-free language
+   - Anticipating user needs and concerns
+
+4. Reference competitor documentation from:
+   - Fireblocks: https://developers.fireblocks.com/
+   To ensure:
+   - Coverage of essential content
+   - Industry-standard terminology
+   - Competitive feature comparisons
+   - Best practices in documentation structure
+
+5. Include all necessary components:
+   - Front matter (title, sidebarTitle, lang, description)
+   - Appropriate sections and subsections
+   - Tables and lists if needed
+   - Notes, Tips, or Warnings where relevant
+   - Feedback section at the end
+   - Code comments when necessary
+
+6. Add appropriate links to:
+   - Cobo Portal pages using https://portal.cobo.com/ as the base URL
+   - Related documentation using relative paths (e.g., /v2/guides/...)
+   - External resources when necessary
+   Ensure that:
+   - Every feature mentioned has a corresponding link to its documentation
+   - UI elements referenced link to their respective Portal pages
+   - Prerequisites link to their setup guides
+   - Related topics are cross-referenced
+
+7. The topic should end with this tip: <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI) to improve our documentation!</Tip>" />
+

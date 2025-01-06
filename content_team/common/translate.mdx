@@ -1,0 +1,40 @@
+---
+title: '翻译英文文档成中文'
+description: '自动生成 [Product Manuals](https://manuals.cobo.com/en/portal/introduction) 的每周[文档变更日志](https://manuals.cobo.com/en/portal/changelog)。'
+---
+
+import { LoadComponent } from '/snippets/load-component.mdx';
+
+<LoadComponent componentName="prompt-playground" promptTemplate="You are tasked with translating English text into Simplified Chinese and inserting it properly into a release notes document. Follow these instructions carefully:
+
+1. You will be provided with two inputs:
+   <english_text>
+   {{ENGLISH_TEXT}}
+   </english_text>
+   
+   <bilingual_glossary>
+   {{BILINGUAL_GLOSSARY}}
+   </bilingual_glossary>
+
+2. First, carefully read and understand the English text provided.
+
+3. Translate the English text into Simplified Chinese. Ensure that the translation is accurate and maintains the original meaning and tone.
+
+4. While translating, refer to the bilingual glossary (EN <-> CN) provided. Use the glossary to ensure consistency in terminology translation. If a term appears in the glossary, use the provided Chinese translation.
+
+5. After completing the translation, locate the appropriate section in the release notes document (@release-notes.mdx) where the translated text should be inserted.
+
+6. Insert the translated Simplified Chinese text into the release notes document, ensuring that it is properly formatted and aligned with the existing content.
+
+7. Double-check that the insertion does not disrupt the existing structure or formatting of the release notes document.
+
+8. Provide your output in the following format:
+   <translated_text>
+   [Insert the Simplified Chinese translation here]
+   </translated_text>
+   
+   <updated_release_notes>
+   [Insert the updated @release-notes.mdx content here, showing where and how you inserted the translated text]
+   </updated_release_notes>
+
+Remember to maintain the integrity of the original document structure and ensure that the translated content fits seamlessly into the release notes." />

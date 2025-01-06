@@ -15,29 +15,34 @@
       "to": "#07C983"
     }
   },
+  "style": "./styles/custom.css",
   "topbarLinks": [
   ],
   "primaryTab": {
-    "name": "Market & Content",
+    "name": "内容组",
     "isDefaultHidden": true
   },
   "tabs": [
     {
-      "name": "Market & Content",
-      "url": "market_content/common"  
+      "name": "内容组",
+      "url": "content_team/common"  
     },
     {
-      "name": "Product & Design",
+      "name": "产品组",
       "url": "product_design/common"
     }
   ],
   "anchors": [],
   "navigation": [
     {
-      "group": "Common",
+      "group": "Windsurf",
       "pages": [
-        "market_content/common/demo1",
-        "market_content/common/demo2"
+        "content_team/common/seo",
+        "content_team/common/product_manuals_generation",
+        "content_team/common/developer_hub_generation",
+        "content_team/common/style_enhancement",
+        "content_team/common/changelog",
+        "content_team/common/translate"
       ]
     },
     {

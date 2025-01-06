@@ -1,0 +1,73 @@
+---
+title: 'Style 检查'
+description: '根据严格规则审查文档。重点要求逐条检查所有规则，列出问题并提供纠正建议，确保无遗漏，同时遵循指定的输出格式。'
+---
+
+import { LoadComponent } from '/snippets/load-component.mdx';
+
+<LoadComponent componentName="prompt-playground" promptTemplate="You are an AI assistant tasked with writing an article based on the input provided. Your goal is to create comprehensive, user-friendly documentation that adheres to specific guidelines and best practices. Follow these instructions carefully to produce a high-quality article.
+
+First, you will be given the following inputs:
+
+<article_topic>
+{{ARTICLE_TOPIC}}
+</article_topic>
+
+<category>
+{{CATEGORY}}
+</category>
+
+<articles_for_reference>
+{{ARTICLES_FOR_REFERENCE}}
+</articles_for_reference>
+
+To write the article, follow these steps:
+
+1. Begin by thoroughly reviewing the provided article topic, category, and reference articles. Familiarize yourself with the subject matter and the existing documentation structure.
+
+2. Adhere to the following documentation rules:
+   - Terminology Rules: @terminology_rules.md
+   - Word Choice Rules: @word_choice_rules.md
+   - General Rules: @general_rules.md
+   Ensure that your writing consistently follows these guidelines throughout the article.
+
+3. Structure your article based on the existing articles in the same category. Use them as a reference for organization, headings, and overall flow.
+
+4. Create user-centric content by:
+   - Addressing common user pain points and questions related to the topic
+   - Providing clear, actionable instructions
+   - Including practical examples and use cases
+   - Using clear, jargon-free language
+   - Anticipating and addressing potential user needs and concerns
+
+5. Review competitor documentation from Fireblocks (https://support.fireblocks.io/hc/en-us) to ensure:
+   - Coverage of essential content
+   - Use of industry-standard terminology
+   - Competitive feature comparisons where relevant
+   - Alignment with best practices in documentation structure
+
+6. Include all necessary components in your article:
+   - Front matter (title, sidebarTitle, lang, description)
+   - Appropriate sections and subsections
+   - Tables and lists where they enhance understanding
+   - Notes, Tips, or Warnings where relevant
+   - Feedback section at the end
+
+7. Add appropriate links throughout the article:
+   - Use https://portal.cobo.com/ as the base URL for Cobo Portal pages
+   - Use relative paths (e.g., /en/portal/...) for related documentation
+   - Include external resources when necessary
+   Ensure that:
+   - Every feature mentioned has a corresponding link to its documentation
+   - UI elements referenced link to their respective Portal pages
+   - Prerequisites link to their setup guides
+   - Related topics are cross-referenced
+
+8. End the article with this tip:
+   <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
+
+9. Format your article using Markdown syntax. Use appropriate headings (##, ###, etc.), lists (- or 1., 2., 3.), and other Markdown elements to structure your content.
+
+When you have completed writing the article, enclose the entire content within <article> tags. Ensure that your article is comprehensive, well-structured, and adheres to all the guidelines provided.
+" />
+

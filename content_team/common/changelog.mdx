@@ -1,0 +1,19 @@
+---
+title: '每周文档变更日志自动化'
+description: '自动生成 [Product Manuals](https://manuals.cobo.com/en/portal/introduction) 的每周[文档变更日志](https://manuals.cobo.com/en/portal/changelog)。'
+---
+
+import { LoadComponent } from '/snippets/load-component.mdx';
+
+<Note>这个 Prompt 因为涉及 Git Command，无法在 Playground 测试。请直接复制下方的 Prompt 到 Windsurf 执行即可。</Note>
+
+
+```XML XML
+
+All the .mdx files under @. are content of Cobo's Product Manuals (https://manuals.cobo.com). Write a content changelog of the Product Manuals for everything changed under @. (run a git command to acquire everything that has changed, not just the commit name, but the actual changed lines and content in the git commit, in this commit: a28745088e08415332b2c7eb0105dea2a41a7b3a) and update the @changelog.mdx 
+
+That's pretty good. Now, list all the git commits between 2024/09/11 to 2024/09/17 and repeat the same process from the previous prompt for each of them one at a time.
+
+Add links to the documentation that was changed
+
+```
