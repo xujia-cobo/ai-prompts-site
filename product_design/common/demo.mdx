@@ -3,7 +3,9 @@ title: 'Demo'
 description: 'Product & Design demo page'
 ---
 
-## 1. Prompt Template playground demo
+import { LoadComponent } from '/snippets/load-component.mdx';
 
-<LoadComponent componentName="prompt-playground" promptTemplate="Create a hello world {{language}} program, and explain the code." />
+export const promptTemplate = "Create a {{hello world}} JS program, and explain the code.";
+
+<LoadComponent componentName="prompt-playground" promptTemplate={promptTemplate} />
 
