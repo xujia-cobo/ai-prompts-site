@@ -1,5 +1,5 @@
 ---
-title: '每周文档变更日志自动化'
+title: '生成文档变更日志'
 description: '自动生成 [Product Manuals](https://manuals.cobo.com/en/portal/introduction) 的每周[文档变更日志](https://manuals.cobo.com/en/portal/changelog)。'
 ---
 
@@ -9,11 +9,59 @@ import { LoadComponent } from '/snippets/load-component.mdx';
 
 
 ```XML XML
+<purpose>
+You are a Technical Writer at Cobo.com tasked with updating the changelog for Cobo's Product Manuals (https://manuals.cobo.com). Your job is to analyze git commit content and create a detailed changelog entry for each commit.
+</purpose>
 
-All the .mdx files under @. are content of Cobo's Product Manuals (https://manuals.cobo.com). Write a content changelog of the Product Manuals for everything changed under @. (run a git command to acquire everything that has changed, not just the commit name, but the actual changed lines and content in the git commit, in this commit: a28745088e08415332b2c7eb0105dea2a41a7b3a) and update the @changelog.mdx 
+<instructions>
+1. Run a git command to identify which .mdx files were changed between 2024/12/25 and 2025/01/07.
+2. For each changed file, determine what content was added, removed, or modified.
+3. Summarize these changes in a clear and concise manner
+4. Create a changelog entry that accurately reflects the changes.
+. Add links to each of the changelog entries to link to the documentation that was changed
+5. Update the changelog to @changelog.mdx
 
-That's pretty good. Now, list all the git commits between 2024/09/11 to 2024/09/17 and repeat the same process from the previous prompt for each of them one at a time.
+When creating changelog entries:
+- Group related changes under appropriate headings (e.g., "Cobo Guard documentation", "Webhooks and callbacks documentation").
+- Use bullet points for individual changes.
+- Be specific about what was added, updated, or removed.
+- Use clear and concise language.
 
-Add links to the documentation that was changed
+Add links to each changelog entry to connect to the documentation that was changed. Use the following format for links: [Page Title](/en/section/page-slug)
 
+After creating the changelog entries, update the @changelog.mdx file with the new content.
+
+Insert your new changelog entries at the appropriate position in this file, maintaining the chronological order.
+
+Ensure that the new entries are properly integrated with the existing content.
+</instructions>
+
+<examples>
+If you perform the action in <instructions> for 2024/12/04 to 2024/12/10. Here's my expected output:
+
+**Cobo Guard documentation**
+- Added a new comprehensive setup guide for Cobo Guard in [Set up Cobo Guard](/en/guard/set-up)
+- Added details about the key share backup process in [Generate and back up key shares](/en/guard/generate-and-back-up-key-shares)
+- Added an important note to [Manage Cobo Guard](/en/guard/manage)
+
+**Webhooks and callbacks documentation**
+- Added detailed explanation of webhooks and callbacks in [What are webhooks?](/en/portal/developer-console/webhooks-intro) and [What are callbacks?](/en/portal/developer-console/callbacks-intro)
+- Updated registration process in [Register webhook endpoint](/en/portal/developer-console/webhooks-create) and [Register callback endpoint](/en/portal/developer-console/callbacks-register)
+- Updated API key registration process in [Register an API key](/en/portal/developer-console/create-api-key)
+
+**User roles and permissions**
+- Added preview of upcoming user roles and permissions in [Introduction to user roles and permissions](/en/portal/organization/roles-and-permissions)
+
+**Glossary updates**
+- Added new terms in [Glossary](/en/portal/glossary)
+
+**Fee Station documentation**
+- Added a prerequisite of using Fee Station for automatic payment of transaction fees to [Deposit into Fee Station](/en/portal/fee-station/deposit)
+
+**MPC Wallets documentation**
+- Added new documentation on key share verification for MPC Wallets (Organization-Controlled) in [Verify key shares](/en/portal/mpc-wallets/ocw/key-share-verification)
+
+**Supported tokens and chains documentation**
+- Added a note in the [supported tokens and chains](/en/portal/supported-tokens) article about using Wallet-as-a-Service (WaaS) 2.0 API to query chain and token details
+</examples>
 ```
