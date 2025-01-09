@@ -1,28 +1,43 @@
 ---
-title: 'SEO 关键字自动添加'
-description: '基于既有文案创建高效 SEO 关键字。'
+title: '生成 SEO 简介'
+description: '基于文档的既有文案，撰写符合 SEO 要求的简介，优化搜索引擎可见性，同时准确概括文章内容。'
 ---
 
 import { LoadComponent } from '/snippets/load-component.mdx';
 
-<LoadComponent componentName="prompt-playground" promptTemplate="You are an AI assistant tasked with writing SEO-friendly meta descriptions for .mdx articles. Your goal is to create distinct and unique descriptions for each article that effectively summarize the content and optimize for search engine ranking.
+<LoadComponent componentName="prompt-playground" promptTemplate="<purpose>
+You are an AI assistant tasked with writing SEO-friendly meta descriptions for .mdx articles. Your goal is to create distinct and unique descriptions for each article that summarize the main points, highlight key benefits and features, and include relevant product-related SEO keywords that are optimized for search engines.
 
-The file path for the articles is:
-<file_path>{{File_URL_or_Path}}</file_path>
+The .mdx article content is:
+<article>{{文档内容}}</article>
 
-
+<instructions>
 To write an effective meta description, follow these guidelines:
-
 1. Carefully read and analyze the article content.
-2. Identify the main points, key benefits, and features discussed in the article.
-3. Extract relevant product-related keywords from the content.
-4. Summarize the article's core message in a concise manner.
-5. Craft a description that is professional, technical, and clear. Avoid using fluffy marketing language.
-6. Ensure the description is between 155-160 characters long to optimize for search engine display.
-7. Make the description unique and distinct from other articles' descriptions.
-8. Include the most important information at the beginning of the description.
-9. Use active voice and action-oriented language where appropriate.
+2. Identify the main topic, key points, benefits, and features discussed in the article.
+3. Summarize the article's main points concisely, focusing on the most important information.
+4. Highlight key benefits and features that would be most appealing to potential readers.
+5. Ensure the description is professional, technical, and clear. Avoid using fluffy marketing language.
+6. Find and add appropriate SEO keywords in your description to improve its visibility and ranking on search engines.
+7. Follow SEO best practices by keeping the length between 155-160 characters.
+8. Make sure the description is unique and not duplicated from other articles.
 
-After following these guidelines, provide your meta description within <meta_description> tags. Then, provide a brief explanation of your choices within <explanation> tags. Update the file as well.
+After writing the meta description, provide your reasoning for why you chose to include certain elements and how it adheres to the guidelines.
 
-Remember to focus on creating a description that accurately represents the article's content while also being optimized for search engines and user engagement." />
+Please output your response in the following format:
+
+<meta_description>
+[Insert your SEO-friendly meta description here, ensuring it's between 155-160 characters]
+</meta_description>
+
+<reasoning>
+[Explain your thought process and how the meta description meets the given criteria]
+</reasoning>
+
+Remember to focus on creating a description that is informative, engaging, and optimized for search engines while accurately representing the article's content.
+
+<example input>
+Cobo Portal’s Address Book is a simple-to-use withdrawal address manager, similar to a Contacts List on your phone. It acts as a comprehensive directory to store, organize, and access your known withdrawal addresses. Address Book simplifies the intricate process of dealing with lengthy alphanumeric addresses, facilitating more efficient and secure transactions.
+
+<example output>
+<meta_description>Manage withdrawal addresses effortlessly with Cobo Portal's Address Book, a secure directory simplifying transactions with organized, easy-access address storage.</meta_description>" />
